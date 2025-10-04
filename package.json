@@ -1,0 +1,79 @@
+{
+  "name": "vscode-folgezettel",
+  "displayName": "vscode-folgezettel",
+  "publisher": "tomodachi94",
+  "description": "Provides a small set of filename-based commands for creating and navigating folgezettel-style notes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomodachi94/vscode-folgezettel"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "browser": "./dist/web/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-folgezettel.newTrainOfThought",
+        "title": "New Train of Thought",
+        "category": "Folgezettel"
+      },
+      {
+        "command": "vscode-folgezettel.newSiblingThought",
+        "title": "New Sibling Thought",
+        "category": "Folgezettel",
+        "when": "editorLangId == markdown"
+      },
+      {
+        "command": "vscode-folgezettel.newChildThought",
+        "title": "New Child Thought",
+        "category": "Folgezettel",
+        "when": "editorLangId == markdown"
+      },
+      {
+        "command": "vscode-folgezettel.goToParentThought",
+        "title": "Go To Parent Thought",
+        "category": "Folgezettel",
+        "when": "editorLangId == markdown"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js test-workspace",
+    "pretest": "npm run compile-web",
+    "vscode:prepublish": "npm run package-web",
+    "compile-web": "webpack",
+    "watch-web": "webpack --watch",
+    "package-web": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src && prettier . --check",
+    "lint:fix": "eslint src --fix && prettier . --write",
+    "ci:run": "npm ci && npm run lint && xvfb-run -a npm run test",
+    "run-in-browser": "vscode-test-web --browserType=none --extensionDevelopmentPath=. ."
+  },
+  "devDependencies": {
+    "@types/assert": "^1.5.11",
+    "@types/mocha": "^10.0.10",
+    "@types/vscode": "^1.104.0",
+    "@types/webpack-env": "^1.18.8",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "@vscode/test-web": "^0.0.74",
+    "@vscode/vsce": "^3.6.2",
+    "assert": "^2.1.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "mocha": "^11.7.4",
+    "prettier": "^3.6.2",
+    "process": "^0.11.10",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
