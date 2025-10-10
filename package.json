@@ -2,7 +2,7 @@
   "name": "vscode-folgezettel",
   "displayName": "vscode-folgezettel",
   "publisher": "tomodachi94",
-  "description": "Provides a small set of filename-based commands for creating and navigating folgezettel-style notes",
+  "description": "Provides a small set of filename-based commands for creating and navigating folgezettel-style notes in a zettelkasten",
   "repository": {
     "type": "git",
     "url": "https://github.com/tomodachi94/vscode-folgezettel"

@@ -1,6 +1,6 @@
 # vscode-folgezettel
 
-This extension provides a small set of filename-based commands for creating and navigating folgezettel-style notes, as [described by Bob Doto](https://writing.bobdoto.computer/how-to-use-folgezettel-in-your-zettelkasten-everything-you-need-to-know-to-get-started/).
+This extension provides a small set of filename-based commands for creating and navigating folgezettel-style notes in a zettelkasten, as [described by Bob Doto](https://writing.bobdoto.computer/how-to-use-folgezettel-in-your-zettelkasten-everything-you-need-to-know-to-get-started/).
 
 ## Commands
 
