@@ -18,6 +18,20 @@ describe("New Child integration", () => {
     assert.strictEqual(active.basename, "2.1a.md");
   });
 
+  it("creates a child where the parent is titled (53.1 hello -> 53.1a)", async () => {
+    const fileUri = await touch("53.1 hello.md");
+
+    const doc = await vscode.workspace.openTextDocument(fileUri);
+    await vscode.window.showTextDocument(doc);
+
+    await vscode.commands.executeCommand("vscode-folgezettel.newChildThought");
+
+    const active = newParsedIdFromPath(
+      vscode.window.activeTextEditor!.document.fileName as MarkdownFilename,
+    );
+    assert.strictEqual(active.basename, "53.1a.md");
+  });
+
   it("creates numeric child for id without dot by appending number (foo -> foo1)", async () => {
     const fileUri = await touch("foo.md");
 

@@ -20,4 +20,19 @@ describe("New Sibling integration", () => {
       .pop();
     assert.strictEqual(activeFile, "2.1b.md");
   });
+
+  it("creates a new sibling when the current note is titled", async function () {
+    const fileUri = await touch("64.1a hello world.md");
+    const doc = await vscode.workspace.openTextDocument(fileUri);
+    await vscode.window.showTextDocument(doc);
+
+    await vscode.commands.executeCommand(
+      "vscode-folgezettel.newSiblingThought",
+    );
+
+    const activeFile = vscode.window.activeTextEditor?.document.uri.path
+      .split("/")
+      .pop();
+    assert.strictEqual(activeFile, "64.1b.md");
+  });
 });
