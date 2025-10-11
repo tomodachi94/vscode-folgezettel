@@ -6,6 +6,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [0.0.2]
+
 ### Fixed
 
 - Go To Parent Thought: Handle case where a title in the parent is present (fixes [#1](https://github.com/tomodachi94/vscode-folgezettel/issues/1))
