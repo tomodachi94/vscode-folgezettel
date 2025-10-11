@@ -152,12 +152,25 @@ export function activate(context: vscode.ExtensionContext) {
           const currentFile = newParsedIdFromPath(
             editor.document.fileName as MarkdownFilename,
           );
-          const newFilename = parentFromCurrent(currentFile);
-          const uri = vscode.Uri.joinPath(
-            vscode.workspace.workspaceFolders![0].uri,
-            newFilename.basename,
-          );
-          await vscode.window.showTextDocument(uri);
+          const parentId = parentFromCurrent(currentFile);
+
+          const files = await vscode.workspace.findFiles("*.md");
+          let parentFile: vscode.Uri | undefined;
+          for (const file of files) {
+            const parsed = newParsedIdFromPath(file.path as MarkdownFilename);
+            if (parsed.id === parentId.id) {
+              parentFile = file;
+              break;
+            }
+          }
+          if (!parentFile) {
+            // fallback to untitled file with just id
+            parentFile = vscode.Uri.joinPath(
+              vscode.workspace.workspaceFolders![0].uri,
+              parentId.basename,
+            );
+          }
+          await vscode.window.showTextDocument(parentFile);
         } catch (err) {
           console.error("Error in goToParentThought:", err);
           vscode.window.showErrorMessage("Error in goToParentThought: " + err);
