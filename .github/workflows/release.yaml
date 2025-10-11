@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (or `patch`, `minor`, or `major`)"
+        required: true
+        type: string
+permissions:
+  # We need to be able to:
+  # - push a tag
+  # - create a GitHub Release
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+      - name: git config
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - run: npm ci
+      - run: npm run release "$VERSION" --ci
+        env:
+          VERSION: ${{ inputs.version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKgEN }}
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}

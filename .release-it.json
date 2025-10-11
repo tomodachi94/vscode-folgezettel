@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/release-it/schema/release-it.json",
+  "hooks": {
+    "after:git": "npm run build && npm run release:vsix"
+  },
+  "git": {
+    "commitMessage": "release: ${version}",
+    "requireBranch": "main"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "assets": "vscode-folgezettel.vsix"
+  },
+  "npm": {
+    "publish": false
+  },
+  "plugins": {
+    "@release-it/keep-a-changelog": {
+      "addVersionUrl": false,
+      "filename": "CHANGELOG.md"
+    }
+  }
+}

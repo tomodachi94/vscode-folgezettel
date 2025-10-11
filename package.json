@@ -55,8 +55,13 @@
     }
   },
   "scripts": {
+    "build": "vsce package -o vscode-folgezettel.vsix",
     "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js test-workspace",
     "pretest": "npm run compile-web",
+    "release": "release-it",
+    "release:vsix": "npm run release:vsix:publish-marketplace -i vscode-folgezettel.vsix && npm run release:vsix:publish-openvsx -i vscode-folgezettel.vsix",
+    "release:vsix:publish-marketplace": "npm exec -- vsce publish",
+    "release:vsix:publish-openvsx": "npm exec -- ovsx publish",
     "vscode:prepublish": "npm run package-web",
     "compile-web": "webpack",
     "watch-web": "webpack --watch",
@@ -67,6 +72,7 @@
     "run-in-browser": "vscode-test-web --browserType=none --extensionDevelopmentPath=. ."
   },
   "devDependencies": {
+    "@release-it/keep-a-changelog": "^7.0.0",
     "@types/assert": "^1.5.11",
     "@types/mocha": "^10.0.10",
     "@types/vscode": "^1.104.0",
@@ -83,6 +89,7 @@
     "ovsx": "*",
     "prettier": "^3.6.2",
     "process": "^0.11.10",
+    "release-it": "^19.0.5",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.3",
     "webpack": "^5.102.0",
