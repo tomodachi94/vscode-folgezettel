@@ -4,9 +4,13 @@ This extension provides a small set of filename-based commands for creating and 
 
 This extension can be downloaded from [the Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=tomodachi94.vscode-folgezettel), [the Open VSX Registry](https://open-vsx.org/extension/tomodachi94/vscode-folgezettel), or [directly from GitHub Releases](https://github.com/tomodachi94/vscode-folgezettel).[^1]
 
+This extension was built with [Foam](https://foambubble.github.io/foam/) in mind, but it should work equally well with other extensions (or none at all!). If you can think of a way to better integrate this with other extensions, please [open an issue](https://github.com/tomodachi94/vscode-folgezettel/issues).
+
 ## Commands
 
 All commands are available from the Command Palette (press Ctrl/Cmd+Shift+P and type the command name). They operate on Markdown files in the root of the current workspace.
+
+**I strongly recommend assigning any of these commands that you find helpful to [keyboard shortcuts](https://code.visualstudio.com/docs/configure/keybindings).**
 
 - `Folgezettel: New Train of Thought`
   - Creates and opens a new train of thought in the form `x.1`, where `x` is the next unused prefix
