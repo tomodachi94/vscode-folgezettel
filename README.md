@@ -2,6 +2,8 @@
 
 This extension provides a small set of filename-based commands for creating and navigating folgezettel-style notes in a zettelkasten, as [described by Bob Doto](https://writing.bobdoto.computer/how-to-use-folgezettel-in-your-zettelkasten-everything-you-need-to-know-to-get-started/).
 
+This extension can be downloaded from [the Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=tomodachi94.vscode-folgezettel), [the Open VSX Registry](https://open-vsx.org/extension/tomodachi94/vscode-folgezettel), or [directly from GitHub Releases](https://github.com/tomodachi94/vscode-folgezettel).[^1]
+
 ## Commands
 
 All commands are available from the Command Palette (press Ctrl/Cmd+Shift+P and type the command name). They operate on Markdown files in the root of the current workspace.
@@ -23,3 +25,5 @@ All commands are available from the Command Palette (press Ctrl/Cmd+Shift+P and 
 This project [lives on GitHub](https://github.com/tomodachi94/vscode-folgezettel). Please write tests for any new features, and make sure lints pass (`npm test && npm lint`).
 
 `src/web/pureFolgezettel.ts` should only contain abstract string parsing functions; do not use any functions or libraries not available for regular Node.js.
+
+[^1]: These should all provide identical files. If anything differs, please [open an issue](https://github.com/tomodachi94/vscode-folgezettel/issues).
