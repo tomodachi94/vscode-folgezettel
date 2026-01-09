@@ -11,7 +11,9 @@
   "engines": {
     "vscode": "^1.104.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "main": "./dist/extension.js",
   "browser": "./dist/web/extension.js",
   "contributes": {
