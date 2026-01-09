@@ -61,8 +61,8 @@
     "compile-web": "webpack",
     "watch-web": "webpack --watch",
     "package-web": "webpack --mode production --devtool hidden-source-map",
-    "lint": "eslint src && prettier . --check --diff",
-    "lint:fix": "eslint src --fix && prettier . --write",
+    "lint": "eslint src && prettier . --check && npm audit",
+    "lint:fix": "eslint src --fix && prettier . --write && npm audit fix",
     "ci:run": "npm ci && npm run lint && xvfb-run -a npm run test",
     "run-in-browser": "vscode-test-web --browserType=none --extensionDevelopmentPath=. ."
   },
