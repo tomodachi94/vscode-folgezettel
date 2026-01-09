@@ -14,6 +14,11 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "zettelkasten",
+    "note-taking",
+    "Foam"
+  ],
   "main": "./dist/extension.js",
   "browser": "./dist/web/extension.js",
   "contributes": {
