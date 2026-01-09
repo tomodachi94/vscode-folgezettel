@@ -11,9 +11,7 @@
   "engines": {
     "vscode": "^1.104.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "main": "./dist/extension.js",
   "browser": "./dist/web/extension.js",
   "contributes": {
@@ -42,6 +40,12 @@
         "when": "editorLangId == markdown"
       }
     ]
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "This extension is disabled in Untrusted Workspaces because all of its operations involve parsing filenames, which could be dangerous with untrusted input."
+    }
   },
   "scripts": {
     "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js test-workspace",
