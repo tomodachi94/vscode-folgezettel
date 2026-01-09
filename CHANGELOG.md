@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Explicitly disable this extension in [Untrusted Workspaces](https://code.visualstudio.com/docs/editing/workspaces/workspace-trust#_restricted-mode),
+  because all of its operations involve parsing filenames, which could be dangerous with untrusted input.
+
 ## [0.0.2] - 2025-10-10
 
 ### Fixed
