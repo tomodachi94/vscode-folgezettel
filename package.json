@@ -68,7 +68,7 @@
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^16.4.0",
-    "mocha": "^11.7.4",
+    "mocha": "^11.7.5",
     "ovsx": "*",
     "prettier": "^3.6.2",
     "process": "^0.11.10",
