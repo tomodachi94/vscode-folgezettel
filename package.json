@@ -78,7 +78,7 @@
     "assert": "^2.1.0",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
-    "globals": "^16.4.0",
+    "globals": "^17.0.0",
     "mocha": "^11.7.5",
     "ovsx": "*",
     "prettier": "^3.6.2",
