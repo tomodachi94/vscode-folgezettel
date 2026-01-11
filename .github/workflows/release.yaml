@@ -7,6 +7,13 @@ on:
         description: "Version to release (or `patch`, `minor`, or `major`)"
         required: true
         type: string
+      VSCE_PAT:
+        description: "Access token for marketplace.visualstudio.com, generated through https://dev.azure.com/tomodachi94/_usersSettings/tokens"
+        required: true
+        type: string
+      OVSX_PAT:
+        description: "Access token for open-vsx.org, generated through https://open-vsx.org/user-settings/tokens"
+        type: string
 permissions:
   # We need to be able to:
   # - push a tag
@@ -29,5 +36,5 @@ jobs:
         env:
           VERSION: ${{ inputs.version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+          VSCE_PAT: ${{ inputs.VSCE_PAT }}
+          OVSX_PAT: ${{ inputs.OVSX_PAT }}
