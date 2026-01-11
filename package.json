@@ -59,7 +59,7 @@
     "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js test-workspace",
     "pretest": "npm run compile-web",
     "release": "release-it",
-    "release:vsix": "npm run release:vsix:publish-marketplace -i vscode-folgezettel.vsix && npm run release:vsix:publish-openvsx -i vscode-folgezettel.vsix",
+    "release:vsix": "npm run build && release:vsix:publish-marketplace -i vscode-folgezettel.vsix && npm run release:vsix:publish-openvsx -i vscode-folgezettel.vsix",
     "release:vsix:publish-marketplace": "npm exec -- vsce publish",
     "release:vsix:publish-openvsx": "npm exec -- ovsx publish",
     "vscode:prepublish": "npm run package-web",
